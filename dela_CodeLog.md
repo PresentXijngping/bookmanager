@@ -5,8 +5,9 @@ DAO层封装第二天~~~
 
 **2** db-config这个resource文件还是老套路咯, 你们将代码拉下来之后将里面的username和password改成你们自己数据库的就好了
 
-**3** 我们的数据库的数据源采用的是dbcp数据库连接池, 需要下载两个jar包:commons-dbcp2和common-pool2, 在这里直接贴上它们的<dependency>:
-  ```
+**3** 我们的数据库的数据源采用的是dbcp数据库连接池, 需要下载两个jar包:commons-dbcp2和common-pool2, 在这里直接贴上它们的dependency:
+  
+  ```
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
