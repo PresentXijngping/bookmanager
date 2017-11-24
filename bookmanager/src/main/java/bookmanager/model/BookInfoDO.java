@@ -1,20 +1,31 @@
 package bookmanager.model;
 
-import java.util.Date;
 
 /**
  * Created by dela on 11/22/17.
  */
+
+//书籍信息表
 public class BookInfoDO {
-    private int pkId;   //wuyiyizhujian
-    private String ugkName;  //shuming(zuhesuoyin)
-    private String author;  //zuozhe
-    private int ugkUid;     //userbiaolideuid(zuhesuoyin)
-    private int amount;     //shuliang
-    private Date uploadDate; //shangchuanriqi
-    private String describ;  //shujimiaoshu
+    private int pkId;   //无意义主键
+    private String ugkName;  //书名(组合索引)
+    private String author;  //作者
+    private int ugkUid;     //所有者(即用户表里的id)(组合索引)
+    private int amount;     //数量
+    private String uploadDate; //上传时间
+    private String describ;  //书籍描述
 
     public BookInfoDO() { }
+
+    public BookInfoDO(int pkId, String ugkName, String author, int ugkUid, int amount, String uploadDate, String describ) {
+        this.pkId = pkId;
+        this.ugkName = ugkName;
+        this.author = author;
+        this.ugkUid = ugkUid;
+        this.amount = amount;
+        this.uploadDate = uploadDate;
+        this.describ = describ;
+    }
 
     public int getPkId() {
         return pkId;
@@ -56,11 +67,11 @@ public class BookInfoDO {
         this.amount = amount;
     }
 
-    public Date getUploadDate() {
+    public String getUploadDate() {
         return uploadDate;
     }
 
-    public void setUploadDate(Date uploadDate) {
+    public void setUploadDate(String uploadDate) {
         this.uploadDate = uploadDate;
     }
 

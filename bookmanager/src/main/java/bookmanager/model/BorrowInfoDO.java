@@ -1,17 +1,25 @@
 package bookmanager.model;
 
-import java.util.Date;
 
 /**
  * Created by dela on 11/22/17.
  */
+
+//书籍借阅关系表
 public class BorrowInfoDO {
-    private int pkId;   //wuyiyizhujian
-    private int bookInfoPkId;  //bookinfo zhezhangbiaodezhujian
-    private int userId;        //yonghuzhezhangbiaodeid
-    private Date borrowDate;   //jieshuriqi
+    private int pkId;   //无意义主键
+    private int bookInfoPkId;  //bookInfo这张表里面的主键
+    private int userId;        //用户表里的id
+    private String borrowDate;   //借阅时间
 
     public BorrowInfoDO() { }
+
+    public BorrowInfoDO(int pkId, int bookInfoPkId, int userId, String borrowDate) {
+        this.pkId = pkId;
+        this.bookInfoPkId = bookInfoPkId;
+        this.userId = userId;
+        this.borrowDate = borrowDate;
+    }
 
     public int getPkId() {
         return pkId;
@@ -37,11 +45,11 @@ public class BorrowInfoDO {
         this.userId = userId;
     }
 
-    public Date getBorrowDate() {
+    public String getBorrowDate() {
         return borrowDate;
     }
 
-    public void setBorrowDate(Date borrowDate) {
+    public void setBorrowDate(String borrowDate) {
         this.borrowDate = borrowDate;
     }
 }

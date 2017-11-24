@@ -1,18 +1,26 @@
 package bookmanager.model;
 
-import java.util.Date;
 
 /**
  * Created by dela on 11/22/17.
  */
+
+//评论表
 public class BookCommentDO {
-    private int pkId; //wuyiyizhujie
-    private int bookInfoPkId;  //shujixinxizhujianid
-    private int userId;  //yonghuid
-    private String content;  //pinglunneirong
-    private Date commentDateTime;  //pinglunriqi
+    private int pkId; //无意义主键
+    private int bookInfoPkId;  //书籍信息表的主键id
+    private int userId;  //用户表id
+    private String content;  //评论
+    private String commentDateTime;  //评论时间
 
     public BookCommentDO() { }
+
+    public BookCommentDO(int bookInfoPkId, int userId, String content, String commentDateTime) {
+        this.bookInfoPkId = bookInfoPkId;
+        this.userId = userId;
+        this.content = content;
+        this.commentDateTime = commentDateTime;
+    }
 
     public int getPkId() {
         return pkId;
@@ -46,11 +54,11 @@ public class BookCommentDO {
         this.content = content;
     }
 
-    public Date getCommentDateTime() {
+    public String getCommentDateTime() {
         return commentDateTime;
     }
 
-    public void setCommentDateTime(Date commentDateTime) {
+    public void setCommentDateTime(String commentDateTime) {
         this.commentDateTime = commentDateTime;
     }
 }

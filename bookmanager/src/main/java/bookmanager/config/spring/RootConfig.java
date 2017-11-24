@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 //配置加载非Web组件的Bean的ContextLoaderListener应用上下文的JavaConfig
 @Configuration
-@ComponentScan(basePackages = {"bookmanager"},
+@ComponentScan(basePackages = {"Controller"},
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
 public class RootConfig {
 }

@@ -3,6 +3,8 @@ package bookmanager.model;
 /**
  * Created by dela on 11/22/17.
  */
+
+//cs用户表
 public class UserDO {
     private int uid;
     private String name;
@@ -22,6 +24,26 @@ public class UserDO {
     private String job;
 
     public UserDO() { }
+
+    public UserDO(int uid, String name, int privilege, String password, int sex, String phone, String mail, String qq,
+                  String wechat, String blog, String github, String _native, String grade, String major, String workplace, String job) {
+        this.uid = uid;
+        this.name = name;
+        this.privilege = privilege;
+        this.password = password;
+        this.sex = sex;
+        this.phone = phone;
+        this.mail = mail;
+        this.qq = qq;
+        this.wechat = wechat;
+        this.blog = blog;
+        this.github = github;
+        this._native = _native;
+        this.grade = grade;
+        this.major = major;
+        this.workplace = workplace;
+        this.job = job;
+    }
 
     public int getUid() {
         return uid;

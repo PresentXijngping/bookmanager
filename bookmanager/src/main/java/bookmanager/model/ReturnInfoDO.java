@@ -1,17 +1,25 @@
 package bookmanager.model;
 
-import java.util.Date;
 
 /**
  * Created by dela on 11/22/17.
  */
+
+//归还时间表
 public class ReturnInfoDO {
-    private int pkId;   //wuyiyizhujian
-    private int bookInfoPkId;  //bookinfo zhezhangbiaodezhujian
-    private int userId;      //yonghubiaodeid
-    private Date returnDate;  //guihuanriqi
+    private int pkId;   //无意义主键
+    private int bookInfoPkId;  //bookInfo这张表里面的主键
+    private int userId;      //用户表里的id
+    private String returnDate;  //归还日期
 
     public ReturnInfoDO() { }
+
+    public ReturnInfoDO(int pkId, int bookInfoPkId, int userId, String returnDate) {
+        this.pkId = pkId;
+        this.bookInfoPkId = bookInfoPkId;
+        this.userId = userId;
+        this.returnDate = returnDate;
+    }
 
     public int getPkId() {
         return pkId;
@@ -37,11 +45,11 @@ public class ReturnInfoDO {
         this.userId = userId;
     }
 
-    public Date getReturnDate() {
+    public String getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
     }
 }

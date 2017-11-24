@@ -3,12 +3,20 @@ package bookmanager.model;
 /**
  * Created by dela on 11/22/17.
  */
+
+//书籍与标签关系表
 public class BookRelationLabelDO {
-    private int pkId;           //wuyiyizhujian
-    private int bookInfoPkId;   //bookinfo zhezhangbiaolimiandezhujian
-    private int bookLabelPkId;  //biaoqian zhezhangbiaolimiandezhujian
+    private int pkId;           //无意义主键
+    private int bookInfoPkId;   //bookInfo这张表里的主键
+    private int bookLabelPkId;  //bookLable这张表里的主键
 
     public BookRelationLabelDO() { }
+
+    public BookRelationLabelDO(int pkId, int bookInfoPkId, int bookLabelPkId) {
+        this.pkId = pkId;
+        this.bookInfoPkId = bookInfoPkId;
+        this.bookLabelPkId = bookLabelPkId;
+    }
 
     public int getPkId() {
         return pkId;
