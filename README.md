@@ -6,25 +6,33 @@ xiyouLinux图书借阅平台
 ```
 config ----spring <-放置spring的配置文件  
        | 
-       ----database <-放置数据库的配置文件  
+       +---database <-放置数据库的配置文件  
 
- dao ----dbfactory <-dao接口的生产工厂  
-     |
-     ----dbimpl   <-数据库接口的实现类  
-     |
-     ----dbservice <-数据库所提供的调用接口  
+dao ----dbfactory <-dao接口的生产工厂  
+    |
+    +---dbimpl   <-数据库接口的实现类  
+    |
+    +---dbservice <-数据库所提供的调用接口  
 
 model ---- <-存放Java Bean等数据模型  
-
-web  ---- <-存放控制器  
-
-test ---- <-存放测试类  
+      |
+      +---po <-存放业务层与数据库层交互的Java Bean ----csuser
+      |                                        |
+      |                                        +---booklabel
+      |                                        |
+      |                                        +---more（每个表对应一个数据模型，命名方式为表名）
+      +---vo <-存放业务层与视图层交互的Java Bean ----label
+                                             |
+                                             +---more（每个视图对应一个数据模型，命名方式为视图名）
+web  ----label
+     |
+     +---more <-每个视图所需要的控制器对应一个目录（命名方式为视图名）
+     
+test ---- <-存放测试类
 
 upload ---- <-存放上传的文件  
 
 view ---- <-存放jsp、html等文件
-
-utilClass ---- <-存放工具类(比如日期转换类:将时间戳转换为yy-mm-dd hh:mm:ss)
 ```
 ---
 ## 数据库建表
