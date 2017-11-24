@@ -6,12 +6,15 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
- * Created by dela on 11/22/17.
+ * @Author: spider_hgyi
+ * @Date: Created in 上午11:20 17-11-20.
+ * @Modified By:
+ * @Description:
  */
-
-//配置加载非Web组件的Bean的ContextLoaderListener应用上下文的JavaConfig
 @Configuration
-@ComponentScan(basePackages = {"Controller"},
-        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)})
+@ComponentScan(basePackages = {"bookmanager"}, excludeFilters = {
+        @ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)
+})
 public class RootConfig {
+
 }

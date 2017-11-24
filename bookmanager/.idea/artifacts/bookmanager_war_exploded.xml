@@ -6,6 +6,20 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="bookmanager" />
+          <element id="library" level="application" name="jquery" />
+          <element id="library" level="application" name="bootstrap" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-dbcp2:2.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.4.2" />
+          <element id="library" level="project" name="Spring MVC-4.3.12.RELEASE" />
+          <element id="library" level="project" name="Spring-4.3.12.RELEASE" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.3.5" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:1.11.1" />
         </element>
       </element>
     </root>

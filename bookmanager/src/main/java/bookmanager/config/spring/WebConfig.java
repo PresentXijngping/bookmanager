@@ -10,32 +10,33 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
- * Created by dela on 11/22/17.
+ * @Author: spider_hgyi
+ * @Date: Created in 上午11:21 17-11-20.
+ * @Modified By:
+ * @Description:
  */
-
-//配置DispatcherServlet应用上下文的JavaConfig
-//@EnableWebMvc注解开启Spring MVC
 @Configuration
+//启用Spring MVC
 @EnableWebMvc
-@ComponentScan("Controller") //启用组件扫描, 组件扫描只会扫描到这里设置的包及其子包
+@ComponentScan("bookmanager.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
-    //配置ViewResolver视图解析器具体解析view名字的规则
+    //配置视图解析器
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("WEB-INF");
+
+        resolver.setPrefix("/view/");
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true);
+        resolver.setViewClass(org.springframework.web.servlet.view.JstlView.class);
 
         return resolver;
     }
 
-    //配置对静态资源的处理
-    //通过调用DefaultServletHandlerConfigurer的enable()方法,
-    //要求DispatcherServlet将对静态资源的请求转发到Servlet容器中默认的Servlet上,
-    //而不是DispatcherServelt本身来处理这类请求.
+    //配置静态资源的处理（对静态资源处理的请求转发至默认的Servlet上，而不是使用DispatcherServlet进行处理）
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
 }
+

@@ -1,9 +1,8 @@
 package bookmanager.dao.dbimpl;
 
 import bookmanager.dao.dbservice.BookRelationLabelService;
-import bookmanager.model.BookInfoDO;
-import bookmanager.model.BookRelationLabelDO;
-import bookmanager.model.BorrowInfoDO;
+import bookmanager.model.po.bookinfo.BookInfoPO;
+import bookmanager.model.po.bookrelationlabel.BookRelationLabelPO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,11 +11,14 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Created by dela on 11/23/17.
+ * @Author: spider_hgyi
+ * @Date: Created in 下午1:28 17-11-24.
+ * @Modified By:
+ * @Description:
  */
-
 @Repository
 public class BookRelationLabelServiceImpl implements BookRelationLabelService {
     private JdbcOperations jdbc;
@@ -29,18 +31,18 @@ public class BookRelationLabelServiceImpl implements BookRelationLabelService {
         this.jdbc = jdbc;
     }
 
-    public List<BookInfoDO> getListBookInfoByLabelId(int labelId) {
+    public List<Map<String, Object>> getListBookInfoByLabelId(int labelId) {
         return jdbc.queryForList(GET_LIST_BOOKINFO_BY_LABELID, new BookRelationLabelRowMapper(), labelId);
     }
 
-    public void save(BookRelationLabelDO bookRelationLabel) {
+    public void save(BookRelationLabelPO bookRelationLabel) {
         jdbc.update(SAVE, bookRelationLabel.getBookInfoPkId(), bookRelationLabel.getBookLabelPkId());
     }
 
-    private final static class BookRelationLabelRowMapper implements RowMapper<BookInfoDO> {
+    private final static class BookRelationLabelRowMapper implements RowMapper<BookInfoPO> {
 
-        public BookInfoDO mapRow(ResultSet resultSet, int i) throws SQLException {
-            return new BookInfoDO(
+        public BookInfoPO mapRow(ResultSet resultSet, int i) throws SQLException {
+            return new BookInfoPO(
 
             );
         }

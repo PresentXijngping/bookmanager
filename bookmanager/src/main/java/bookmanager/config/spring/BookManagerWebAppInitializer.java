@@ -3,26 +3,26 @@ package bookmanager.config.spring;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * Created by dela on 11/22/17.
+ * @Author: spider_hgyi
+ * @Date: Created in 上午11:16 17-11-20.
+ * @Modified By:
+ * @Description:
  */
-
-//通过AbstractAnnotationConfigDispatcherServletInitializer来配置DispatcherServlet
-//这个类是web.xml配置的替代方案
 public class BookManagerWebAppInitializer
         extends AbstractAnnotationConfigDispatcherServletInitializer {
-
-    //创建ContextLoaderListener应用上下文
+    @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] {RootConfig.class};
+        return new Class<?>[] { RootConfig.class };
     }
 
-    //创建DispatcherServlet应用上下文
+    @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[] {WebConfig.class};
+        return new Class<?>[] { WebConfig.class };
     }
 
-    //将DispatcherServlet映射到/
+    //将一个或多个路径映射到DispatcherServlet上（处理应用的所有请求）
+    @Override
     protected String[] getServletMappings() {
-        return new String[] {"/"};
+        return new String[] { "/" };
     }
 }
